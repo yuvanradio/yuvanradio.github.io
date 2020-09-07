@@ -10,7 +10,7 @@ const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
 // Song titles
-const songs = ['Adada-Mazhaida', 'En-Kadhal-Solla', 'Poongatre-Poongatre', 'Suthuthe-Suthuthe-Bhoomi', 'Thuli-Thuli-Mazhaiyaai', 'Yedho-Ondru-Ennai'];
+const songs = ['7G Rainbow Colony (2004)\\Kan Peasum Varthaigal', 'Adada-Mazhaida', 'En-Kadhal-Solla', 'Poongatre-Poongatre', 'Suthuthe-Suthuthe-Bhoomi', 'Thuli-Thuli-Mazhaiyaai', 'Yedho-Ondru-Ennai'];
 
 // Keep track of song
 let songIndex = 2;
@@ -20,80 +20,80 @@ loadSong(songs[songIndex]);
 
 // Update song details
 function loadSong(song) {
-  title.innerText = song;
-  audio.src = `music/${song}.mp3`;
-  cover.src = `images/${song}.jpg`;
+    title.innerText = song;
+    audio.src = `music/${song}.mp3`;
+    cover.src = `images/${song}.jpg`;
 }
 
 // Play song
 function playSong() {
-  musicContainer.classList.add('play');
-  playBtn.querySelector('i.fas').classList.remove('fa-play');
-  playBtn.querySelector('i.fas').classList.add('fa-pause');
+    musicContainer.classList.add('play');
+    playBtn.querySelector('i.fas').classList.remove('fa-play');
+    playBtn.querySelector('i.fas').classList.add('fa-pause');
 
-  audio.play();
+    audio.play();
 }
 
 // Pause song
 function pauseSong() {
-  musicContainer.classList.remove('play');
-  playBtn.querySelector('i.fas').classList.add('fa-play');
-  playBtn.querySelector('i.fas').classList.remove('fa-pause');
+    musicContainer.classList.remove('play');
+    playBtn.querySelector('i.fas').classList.add('fa-play');
+    playBtn.querySelector('i.fas').classList.remove('fa-pause');
 
-  audio.pause();
+    audio.pause();
 }
 
 // Previous song
 function prevSong() {
-  songIndex--;
+    songIndex--;
 
-  if (songIndex < 0) {
-    songIndex = songs.length - 1;
-  }
+    if (songIndex < 0) {
+        songIndex = songs.length - 1;
+    }
 
-  loadSong(songs[songIndex]);
+    loadSong(songs[songIndex]);
 
-  playSong();
+    playSong();
 }
 
 // Next song
 function nextSong() {
-  songIndex++;
+    songIndex++;
 
-  if (songIndex > songs.length - 1) {
-    songIndex = 0;
-  }
+    if (songIndex > songs.length - 1) {
+        songIndex = 0;
+    }
 
-  loadSong(songs[songIndex]);
+    loadSong(songs[songIndex]);
 
-  playSong();
+    playSong();
 }
 
 // Update progress bar
 function updateProgress(e) {
-  const { duration, currentTime } = e.srcElement;
-  const progressPercent = (currentTime / duration) * 100;
-  progress.style.width = `${progressPercent}%`;
+    const { duration, currentTime } = e.srcElement;
+    const progressPercent = (currentTime / duration) * 100;
+    progress.style.width = `${progressPercent}%`;
 }
 
 // Set progress bar
 function setProgress(e) {
-  const width = this.clientWidth;
-  const clickX = e.offsetX;
-  const duration = audio.duration;
+    const width = this.clientWidth;
+    const clickX = e.offsetX;
+    const duration = audio.duration;
 
-  audio.currentTime = (clickX / width) * duration;
+    audio.currentTime = (clickX / width) * duration;
 }
 
 // Event listeners
 playBtn.addEventListener('click', () => {
-  const isPlaying = musicContainer.classList.contains('play');
+    const isPlaying = musicContainer.classList.contains('play');
 
-  if (isPlaying) {
-    pauseSong();
-  } else {
-    playSong();
-  }
+    if (isPlaying) {
+        pauseSong();
+    } else {
+        playSong();
+    }
 });
 
 // Change song
