@@ -10,7 +10,7 @@ const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
 // Song titles
-const songs = ['7G Rainbow Colony (2004)\\Kan Peasum Varthaigal', 'Adada-Mazhaida', 'En-Kadhal-Solla', 'Poongatre-Poongatre', 'Suthuthe-Suthuthe-Bhoomi', 'Thuli-Thuli-Mazhaiyaai', 'Yedho-Ondru-Ennai'];
+const songs = ['7G Rainbow Colony (2004)\\Kan Peasum Varthaigal', 'adada-mazhaida', 'En-Kadhal-Solla', 'Poongatre-Poongatre', 'Suthuthe-Suthuthe-Bhoomi', 'Thuli-Thuli-Mazhaiyaai', 'Yedho-Ondru-Ennai'];
 
 // Keep track of song
 let songIndex = 2;
