@@ -588,6 +588,7 @@ function pauseSong() {
 
 // Previous song
 function prevSong() {
+    progress.style.width = 0;
     songIndex = Math.floor((Math.random() * songs.length) + 1);
 
     if (songIndex < 0) {
@@ -601,6 +602,7 @@ function prevSong() {
 
 // Next song
 function nextSong() {
+    progress.style.width = 0;
     songIndex = Math.floor((Math.random() * songs.length) + 1);
 
     if (songIndex > songs.length - 1) {
