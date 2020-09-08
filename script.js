@@ -627,7 +627,7 @@ function setProgress(e) {
     const clickX = e.offsetX;
     const duration = audio.duration;
 
-    audio.currentTime = (20 / width) * duration;
+    audio.currentTime = 0.5 * duration;
 }
 
 // Event listeners
