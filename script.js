@@ -588,7 +588,7 @@ function pauseSong() {
 
 // Previous song
 function prevSong() {
-    songIndex--;
+    songIndex = Math.floor((Math.random() * songs.length) + 1);
 
     if (songIndex < 0) {
         songIndex = songs.length - 1;
