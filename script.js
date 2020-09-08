@@ -563,7 +563,7 @@ loadSong(songs[songIndex]);
 
 // Update song details
 function loadSong(song) {
-    title.innerText = song.split('/')[0] + ' : ' + song.split('/')[1].split('.')[0];
+    title.innerText = song.split('/')[0] + '\n' + song.split('/')[1].split('.')[0];
     audio.src = `music/${song}`;
     cover.src = `music/${song.split('/')[0]}/offset.jpg`;
 }
@@ -573,7 +573,6 @@ function playSong() {
     musicContainer.classList.add('play');
     playBtn.querySelector('i.fas').classList.remove('fa-play');
     playBtn.querySelector('i.fas').classList.add('fa-pause');
-
     audio.play();
 }
 
@@ -626,8 +625,7 @@ function setProgress(e) {
     const width = this.clientWidth;
     const clickX = e.offsetX;
     const duration = audio.duration;
-
-    audio.currentTime = 0.5 * duration;
+    audio.currentTime = (clickX / width) * duration;
 }
 
 // Event listeners
