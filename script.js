@@ -563,7 +563,7 @@ loadSong(songs[songIndex]);
 
 // Update song details
 function loadSong(song) {
-    title.innerText = song.split('/')[0] + '\n' + song.split('/')[1].split('.')[0];
+    title.innerText = song.split('/')[0] + ' : ' + song.split('/')[1].split('.')[0];
     audio.src = `music/${song}`;
     cover.src = `music/${song.split('/')[0]}/offset.jpg`;
 }
