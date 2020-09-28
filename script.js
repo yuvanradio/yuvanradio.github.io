@@ -51,7 +51,7 @@ const songs = ['18 Vayathil - Kadhal Kondein.mp3', 'Aadatha Aatamellam - Mounam 
 // Keep track of song
 let songIndex;
 
-songIndex = localStorage.getItem("songid");
+songIndex = window.localStorage.getItem("songid");
 
 if (songIndex == null) {
     songIndex = Math.floor((Math.random() * songs.length) + 1);
@@ -94,7 +94,7 @@ function prevSong() {
     if (songIndex < 0) {
         songIndex = songs.length - 1;
     }
-    localStorage.setItem("songid", songIndex);
+    window.localStorage.setItem("songid", songIndex);
     loadSong(songs[songIndex]);
 
 
@@ -110,7 +110,7 @@ function nextSong() {
     if (songIndex > songs.length - 1) {
         songIndex = 0;
     }
-    localStorage.setItem("songid", songIndex);
+    window.localStorage.setItem("songid", songIndex);
     loadSong(songs[songIndex]);
 
     playSong();
