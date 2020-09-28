@@ -58,6 +58,7 @@ loadSong(songs[songIndex]);
 function loadSong(song) {
     title.innerText = song.split('.')[0].split(' - ')[0];
     movie.innerText = song.split('.')[0].split(' - ')[1];
+    document.title = song.split('.')[0].split(' - ')[0];
     audio.src = `music/${song}`;
     cover.src = `images/${song.split('.')[0].split(' - ')[1]}.jpg`;
 }
