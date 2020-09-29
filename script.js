@@ -59,7 +59,6 @@ if (songIndex == null) {
 
 // Initially load song details into DOM
 loadSong(songs[songIndex]);
-playSong();
 // Update song details
 function loadSong(song) {
     title.innerText = song.split('.')[0].split(' - ')[0];
